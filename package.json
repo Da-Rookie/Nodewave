@@ -1,0 +1,13 @@
+{
+  "name": "nodewave-prd-v3-download",
+  "version": "3.0.0",
+  "private": true,
+  "description": "Browser download page for the Nodewave AI Tender CRM PRD V3 technical assessment.",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "docx": "^9.5.1",
+    "pdfkit": "^0.17.2"
+  }
+}
