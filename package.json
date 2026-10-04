@@ -1,8 +1,8 @@
 {
-  "name": "nodewave-prd-v3-download",
-  "version": "3.0.0",
+  "name": "siasat-landing-page",
+  "version": "1.0.0",
   "private": true,
-  "description": "Browser download page for the Nodewave AI Tender CRM PRD V3 technical assessment.",
+  "description": "Prototype landing page SIASAT — ubah histori transaksi jadi siasat bisnis.",
   "engines": {
     "node": ">=20"
   },
