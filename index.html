@@ -3,34 +3,221 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nodewave — PRD V3 Final Draft</title>
-  <meta name="description" content="Download PRD V3 Final Draft CRM Berbasis AI untuk Manajemen Tender BUMN Konstruksi." />
+  <meta name="theme-color" content="#123d2b" />
+  <title>SIASAT — Ubah Histori Transaksi Jadi Siasat Bisnis</title>
+  <meta name="description" content="SIASAT membantu bisnis Retail, F&B, dan UMKM mengubah histori transaksi pelanggan menjadi segmentasi dan strategi bisnis berbasis data." />
   <style>
-    :root{color-scheme:light;--bg:#f3f6f4;--panel:#fff;--ink:#12221a;--muted:#617067;--green:#145c3a;--green2:#0f472d;--line:#dce5df}
-    *{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(circle at 20% 0%,#e6f1ea 0,transparent 32%),var(--bg);color:var(--ink)}
-    main{min-height:100vh;display:grid;place-items:center;padding:32px 18px}.card{width:min(760px,100%);background:rgba(255,255,255,.96);border:1px solid var(--line);border-radius:24px;padding:38px;box-shadow:0 22px 70px rgba(27,67,46,.12)}
-    .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:7px 11px;border-radius:999px;background:#eaf4ee;color:var(--green);font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.dot{width:8px;height:8px;border-radius:50%;background:var(--green)}
-    h1{margin:20px 0 12px;font-size:clamp(32px,6vw,54px);line-height:1.04;letter-spacing:-.045em}p{margin:0;color:var(--muted);font-size:16px;line-height:1.7}.meta{margin-top:26px;padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.meta b{display:block;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:5px}.meta span{font-weight:700}.actions{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px}.btn{display:flex;align-items:center;justify-content:space-between;text-decoration:none;padding:18px 20px;border-radius:16px;font-weight:800;border:1px solid var(--line);transition:.18s ease;background:#fff;color:var(--ink)}.btn.primary{background:var(--green);color:#fff;border-color:var(--green)}.btn:hover{transform:translateY(-2px);box-shadow:0 10px 25px rgba(19,70,44,.12)}.btn.primary:hover{background:var(--green2)}.type{font-size:12px;opacity:.72;font-weight:700}.note{margin-top:22px;font-size:13px}.repo{margin-top:22px;font-size:13px}.repo a{color:var(--green);font-weight:700;text-decoration:none}@media(max-width:620px){.card{padding:28px 22px}.meta,.actions{grid-template-columns:1fr}.meta{gap:12px}}
+    :root{
+      --bg:#f5f7f3;--surface:#ffffff;--ink:#13231b;--muted:#68766e;--line:#dbe5dd;
+      --green:#123d2b;--green-2:#1f5a3f;--lime:#d9f2a8;--soft:#eaf2ec;--warm:#f3eee5;
+      --shadow:0 22px 70px rgba(26,62,43,.10)
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:
+      radial-gradient(circle at 80% 5%,rgba(217,242,168,.38),transparent 28%),
+      linear-gradient(180deg,#f8faf6 0%,var(--bg) 100%);color:var(--ink)}
+    a{text-decoration:none;color:inherit}
+    .wrap{width:min(1180px,calc(100% - 36px));margin:auto}
+    nav{position:sticky;top:0;z-index:30;background:rgba(248,250,246,.82);backdrop-filter:blur(16px);border-bottom:1px solid rgba(219,229,221,.8)}
+    .nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:11px;font-weight:900;letter-spacing:-.03em;font-size:22px}
+    .mark{width:34px;height:34px;border-radius:10px;background:var(--green);color:white;display:grid;place-items:center;font-size:15px}
+    .navlinks{display:flex;align-items:center;gap:24px;font-size:14px;color:var(--muted)}
+    .navlinks a:hover{color:var(--ink)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 18px;border-radius:14px;border:1px solid var(--line);font-weight:800;font-size:14px;background:white;transition:.2s}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(26,62,43,.10)}
+    .btn.primary{background:var(--green);border-color:var(--green);color:white}
+    .btn.ghost{background:transparent}
+    .hero{padding:92px 0 64px}
+    .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:54px;align-items:center}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;padding:8px 12px;border-radius:999px;background:var(--soft);color:var(--green-2);font-size:12px;font-weight:850;letter-spacing:.06em;text-transform:uppercase}
+    .eyebrow:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--green-2)}
+    h1{font-size:clamp(48px,7vw,90px);line-height:.94;letter-spacing:-.065em;margin:24px 0 24px;max-width:820px}
+    h1 span{color:var(--green-2)}
+    .lead{font-size:19px;line-height:1.75;color:var(--muted);max-width:720px}
+    .audience{display:flex;gap:9px;flex-wrap:wrap;margin:24px 0}
+    .pill{padding:9px 12px;border:1px solid var(--line);background:rgba(255,255,255,.7);border-radius:999px;font-weight:750;font-size:13px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+    .hero-note{font-size:13px;color:var(--muted);margin-top:14px}
+    .mock{background:var(--surface);border:1px solid var(--line);border-radius:28px;padding:18px;box-shadow:var(--shadow);transform:rotate(1.2deg)}
+    .mock-head{display:flex;justify-content:space-between;align-items:center;padding:7px 6px 17px}
+    .mock-title{font-weight:900}.status{font-size:12px;color:var(--green-2);background:var(--soft);padding:7px 10px;border-radius:999px;font-weight:800}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+    .stat{padding:15px;border-radius:16px;background:#f7f9f6;border:1px solid #e7eee9}
+    .stat b{font-size:22px;display:block;margin-bottom:6px}.stat span{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+    .segments{margin-top:10px;display:grid;gap:8px}
+    .seg{display:flex;align-items:center;justify-content:space-between;padding:13px 14px;border-radius:14px;background:#fbfcfa;border:1px solid #e7eee9}
+    .seg strong{font-size:14px}.seg small{color:var(--muted)}
+    .insight{margin-top:10px;padding:16px;border-radius:16px;background:var(--green);color:white}
+    .insight small{opacity:.65;text-transform:uppercase;letter-spacing:.06em;font-weight:800}.insight p{margin:8px 0 0;line-height:1.55;font-size:14px}
+    section{padding:80px 0}
+    .section-head{max-width:760px;margin-bottom:34px}
+    .kicker{font-weight:900;color:var(--green-2);font-size:13px;text-transform:uppercase;letter-spacing:.07em}
+    h2{font-size:clamp(34px,5vw,58px);letter-spacing:-.05em;line-height:1.02;margin:12px 0 16px}
+    .section-head p{color:var(--muted);line-height:1.75;font-size:17px;margin:0}
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{background:rgba(255,255,255,.9);border:1px solid var(--line);border-radius:22px;padding:25px}
+    .card .num{width:34px;height:34px;display:grid;place-items:center;border-radius:10px;background:var(--soft);font-weight:900;color:var(--green-2);margin-bottom:22px}
+    .card h3{font-size:20px;margin:0 0 10px;letter-spacing:-.025em}.card p{margin:0;color:var(--muted);line-height:1.65}
+    .data-panel{display:grid;grid-template-columns:.9fr 1.1fr;gap:22px;align-items:stretch}
+    .req{background:var(--green);color:white;border-radius:28px;padding:34px}
+    .req h3{font-size:30px;letter-spacing:-.04em;margin:0 0 10px}.req>p{opacity:.74;line-height:1.7}
+    .checks{display:grid;gap:10px;margin-top:24px}
+    .check{display:flex;align-items:flex-start;gap:12px;background:rgba(255,255,255,.08);padding:14px;border-radius:14px}
+    .check i{font-style:normal;width:24px;height:24px;border-radius:7px;background:var(--lime);color:var(--green);display:grid;place-items:center;font-weight:900;flex:0 0 24px}
+    .check b{display:block;margin-bottom:3px}.check span{font-size:13px;opacity:.7}
+    .table-card{background:white;border:1px solid var(--line);border-radius:28px;padding:28px;overflow:hidden}
+    table{width:100%;border-collapse:collapse;margin-top:16px;font-size:14px}
+    th,td{text-align:left;padding:13px 10px;border-bottom:1px solid #edf2ee}
+    th{font-size:11px;text-transform:uppercase;color:var(--muted);letter-spacing:.06em}
+    td strong{color:var(--green-2)}
+    .callout{margin-top:18px;padding:15px 16px;background:var(--warm);border-radius:14px;color:#655e50;font-size:13px;line-height:1.6}
+    .process{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .step{padding:28px;border-radius:22px;border:1px solid var(--line);background:white}
+    .step b{font-size:13px;color:var(--green-2);text-transform:uppercase;letter-spacing:.06em}.step h3{margin:12px 0 10px;font-size:24px}.step p{color:var(--muted);line-height:1.65;margin:0}
+    .cta{padding:50px;border-radius:30px;background:linear-gradient(135deg,#123d2b,#1f5a3f);color:white;display:flex;align-items:center;justify-content:space-between;gap:30px}
+    .cta h2{margin:0 0 12px;font-size:clamp(34px,5vw,55px)}.cta p{max-width:680px;opacity:.75;line-height:1.7;margin:0}
+    .cta .btn{white-space:nowrap;background:var(--lime);border-color:var(--lime);color:var(--green)}
+    footer{padding:34px 0 48px;color:var(--muted);font-size:13px}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    @media(max-width:900px){
+      .navlinks{display:none}.hero{padding-top:56px}.hero-grid,.data-panel{grid-template-columns:1fr}.mock{transform:none}.grid3,.process{grid-template-columns:1fr}.cta{padding:34px;align-items:flex-start;flex-direction:column}.stats{grid-template-columns:1fr}
+    }
   </style>
 </head>
 <body>
-<main>
-  <section class="card">
-    <div class="eyebrow"><span class="dot"></span>Nodewave Technical Assessment</div>
-    <h1>PRD CRM Berbasis AI untuk Manajemen Tender BUMN Konstruksi</h1>
-    <p>V3.0 — Final Draft. Dokumen menggunakan struktur, hierarchy, tabel, dan tipografi yang konsisten untuk kebutuhan Engineering, UI/UX, dan QA.</p>
-    <div class="meta">
-      <div><b>Versi</b><span>3.0 — Final Draft</span></div>
-      <div><b>Tanggal</b><span>30 Sep 2026</span></div>
-      <div><b>Product Manager</b><span>Eko Prasetyo Pratomo</span></div>
+  <nav>
+    <div class="wrap nav">
+      <a class="brand" href="#"><span class="mark">S</span>SIASAT</a>
+      <div class="navlinks">
+        <a href="#masalah">Masalah</a>
+        <a href="#data">Data yang Dibutuhkan</a>
+        <a href="#cara-kerja">Cara Kerja</a>
+      </div>
+      <a class="btn primary" href="#siap">Cek Kesiapan Data</a>
     </div>
-    <div class="actions">
-      <a class="btn primary" href="/api/download?format=pdf"><span>Download PRD V3 Final Draft</span><span class="type">PDF ↓</span></a>
-      <a class="btn" href="/api/download?format=docx"><span>Download PRD V3 Final Draft</span><span class="type">DOCX ↓</span></a>
+  </nav>
+
+  <main>
+    <header class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">Analisis Pelanggan Berbasis RFM</div>
+          <h1>Ubah histori transaksi jadi <span>siasat bisnis.</span></h1>
+          <p class="lead">SIASAT membantu bisnis <strong>Retail, F&B, atau UMKM</strong> memahami siapa pelanggan terbaik, siapa yang mulai jarang kembali, dan strategi apa yang bisa dilakukan berdasarkan histori transaksi pelanggan.</p>
+          <div class="audience">
+            <span class="pill">Retail</span><span class="pill">F&B</span><span class="pill">UMKM</span><span class="pill">B2C Transaksional</span>
+          </div>
+          <div class="hero-actions">
+            <a class="btn primary" href="#data">Lihat Data yang Dibutuhkan →</a>
+            <a class="btn ghost" href="#cara-kerja">Lihat Cara Kerja</a>
+          </div>
+          <p class="hero-note">Punya transaksi tapi belum mencatat pelanggan? Mulai dari transaksi berikutnya—histori yang rapi akan membuat analisis pelanggan jauh lebih berguna.</p>
+        </div>
+
+        <div class="mock" aria-label="Preview dashboard SIASAT">
+          <div class="mock-head"><div class="mock-title">Ringkasan Pelanggan</div><div class="status">Data siap dianalisis</div></div>
+          <div class="stats">
+            <div class="stat"><b>1.284</b><span>Pelanggan</span></div>
+            <div class="stat"><b>Rp 86,4 jt</b><span>Nilai transaksi</span></div>
+            <div class="stat"><b>8</b><span>Segmen aktif</span></div>
+          </div>
+          <div class="segments">
+            <div class="seg"><div><strong>Champions</strong><br><small>Pelanggan paling aktif & bernilai</small></div><b>18%</b></div>
+            <div class="seg"><div><strong>Loyal Customers</strong><br><small>Sering kembali dan konsisten</small></div><b>24%</b></div>
+            <div class="seg"><div><strong>At Risk</strong><br><small>Dulu aktif, mulai jarang kembali</small></div><b>11%</b></div>
+          </div>
+          <div class="insight">
+            <small>Insight SIASAT</small>
+            <p>141 pelanggan bernilai tinggi mulai tidak aktif. Prioritaskan win-back campaign sebelum mereka benar-benar hilang.</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="masalah">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">Masalah yang sering terjadi</div>
+          <h2>Punya banyak transaksi belum tentu berarti benar-benar mengenal pelanggan.</h2>
+          <p>Laporan penjualan bisa menunjukkan omzet. SIASAT berfokus pada pertanyaan berikutnya: siapa yang sering membeli, siapa yang paling bernilai, siapa pelanggan baru, dan siapa yang mulai pergi.</p>
+        </div>
+        <div class="grid3">
+          <article class="card"><div class="num">01</div><h3>Data ada, pola belum kelihatan</h3><p>Transaksi menumpuk dari hari ke hari, tetapi sulit melihat perilaku pelanggan secara menyeluruh.</p></article>
+          <article class="card"><div class="num">02</div><h3>Promosi masih sama ke semua orang</h3><p>Pelanggan loyal, pelanggan baru, dan pelanggan yang hampir hilang diperlakukan dengan strategi yang sama.</p></article>
+          <article class="card"><div class="num">03</div><h3>Keputusan masih berdasarkan feeling</h3><p>SIASAT membantu mengubah histori transaksi menjadi segmentasi yang lebih terukur untuk mendukung keputusan bisnis.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="data">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">Sebelum analisis dimulai</div>
+          <h2>Transaksi harus bisa dikenali sebagai milik pelanggan tertentu.</h2>
+          <p>Untuk menghitung Recency, Frequency, dan Monetary secara benar, SIASAT membutuhkan histori transaksi yang dapat dikaitkan ke pelanggan yang sama dari waktu ke waktu.</p>
+        </div>
+
+        <div class="data-panel">
+          <div class="req">
+            <h3>Data minimum yang dibutuhkan</h3>
+            <p>Tidak harus kompleks. Yang penting setiap transaksi punya identitas pelanggan yang konsisten.</p>
+            <div class="checks">
+              <div class="check"><i>✓</i><div><b>Nama / ID Pelanggan</b><span>Untuk mengenali pelanggan yang sama di transaksi berbeda.</span></div></div>
+              <div class="check"><i>✓</i><div><b>Tanggal Transaksi</b><span>Untuk menghitung seberapa baru pelanggan terakhir bertransaksi.</span></div></div>
+              <div class="check"><i>✓</i><div><b>Nilai Transaksi</b><span>Untuk menghitung kontribusi monetary setiap pelanggan.</span></div></div>
+            </div>
+          </div>
+
+          <div class="table-card">
+            <strong>Contoh data transaksi yang siap dianalisis</strong>
+            <table>
+              <thead><tr><th>Pelanggan</th><th>Tanggal</th><th>Total</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Andi</strong></td><td>01 Okt 2026</td><td>Rp 48.000</td></tr>
+                <tr><td><strong>Sinta</strong></td><td>01 Okt 2026</td><td>Rp 72.000</td></tr>
+                <tr><td><strong>Andi</strong></td><td>03 Okt 2026</td><td>Rp 61.000</td></tr>
+                <tr><td><strong>Raka</strong></td><td>04 Okt 2026</td><td>Rp 39.000</td></tr>
+              </tbody>
+            </table>
+            <div class="callout"><strong>Belum mencatat nama pelanggan?</strong> Anda tetap bisa mulai sekarang. Semakin konsisten histori pelanggan terbentuk, semakin kuat dasar analisis yang bisa dilakukan SIASAT.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cara-kerja">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">Cara kerja</div>
+          <h2>Dari file transaksi menjadi keputusan yang lebih terarah.</h2>
+        </div>
+        <div class="process">
+          <article class="step"><b>Langkah 1</b><h3>Upload histori transaksi</h3><p>Masukkan data pelanggan, tanggal transaksi, dan total belanja dari histori bisnis Anda.</p></article>
+          <article class="step"><b>Langkah 2</b><h3>SIASAT menghitung RFM</h3><p>Setiap pelanggan dianalisis berdasarkan recency, frequency, dan monetary untuk membentuk segmentasi.</p></article>
+          <article class="step"><b>Langkah 3</b><h3>Dapatkan insight bisnis</h3><p>Lihat pelanggan loyal, pelanggan baru, pelanggan berisiko hilang, dan rekomendasi tindakan yang lebih relevan.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="siap">
+      <div class="wrap">
+        <div class="cta">
+          <div>
+            <h2>Data transaksi Anda menyimpan lebih banyak cerita.</h2>
+            <p>Mulai kenali pelanggan di setiap transaksi. Ketika histori itu terbentuk, SIASAT membantu mengubahnya menjadi segmentasi dan siasat bisnis berbasis data.</p>
+          </div>
+          <a class="btn" href="#data">Cek Kesiapan Data →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <div><strong>SIASAT</strong> — Sistem Analisis Strategi</div>
+      <div>Atur Taktik Pemasaran Berbasis Data.</div>
     </div>
-    <p class="note">PDF dan DOCX dibuat dari source PRD V3 yang sama agar requirement dan struktur dokumen tetap sinkron.</p>
-    <p class="repo">Repository: <a href="https://github.com/Da-Rookie/Nodewave" target="_blank" rel="noreferrer">Da-Rookie/Nodewave</a></p>
-  </section>
-</main>
+  </footer>
 </body>
 </html>
